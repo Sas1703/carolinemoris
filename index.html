@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Caroline Morris</title>
+    <style>
+        /* Базовые настройки */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Arial Black', Impact, sans-serif;
+            background-color: #f4f4f4; 
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            color: #000;
+        }
+
+        /* Мобильный контейнер */
+        .mobile-container {
+            width: 100%;
+            max-width: 480px; 
+            background-color: #f8f9fa;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* Фото профиля (Овальное) */
+        .profile-pic-container {
+            width: 170px;
+            height: 220px;
+            border: 4px solid #000;
+            border-radius: 85px; 
+            overflow: hidden;
+            box-shadow: -6px 6px 0px #4f7cff; 
+            background: #ccc;
+            position: relative;
+        }
+
+        .profile-pic-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%; /* Центрирует лицо */
+        }
+
+        /* Блок с именем */
+        .info-section {
+            width: 100%;
+            border: 2px solid #a8c0ff;
+            border-radius: 20px;
+            padding: 25px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+        }
+
+        .name-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .name-text {
+            font-size: 42px;
+            line-height: 0.9;
+            text-align: center;
+            text-transform: uppercase;
+            color: #000;
+            text-shadow: 3px 3px 0px #b4ff39; 
+            letter-spacing: -1px;
+        }
+
+        .verified-badge {
+            background: #4ade80;
+            color: #fff;
+            width: 35px;
+            height: 35px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0 #000;
+            position: absolute;
+            right: -15px;
+            bottom: 5px;
+        }
+
+        .tag {
+            background: #000;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .greeting {
+            font-family: sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .status {
+            border: 2px solid #000;
+            padding: 6px 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 3px 3px 0 #000;
+            background: #fff;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #4ade80;
+            border-radius: 50%;
+            border: 1px solid #000;
+        }
+
+        /* Кнопки */
+        .buttons-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            background-color: #fdf1a5; 
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 15px;
+            text-decoration: none;
+            color: #000;
+            box-shadow: 4px 4px 0px #000;
+            transition: all 0.1s;
+            position: relative;
+        }
+
+        .btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #000;
+        }
+
+        .icon-box {
+            width: 45px;
+            height: 45px;
+            border: 2px solid #000;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .icon-box svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Цвета для иконок */
+        .fansly-bg { background-color: #4ade80; } 
+        .telegram-bg { background-color: #4f9cff; } 
+
+        .btn-text {
+            font-size: 18px;
+            text-transform: uppercase;
+            line-height: 1.1;
+            flex-grow: 1;
+        }
+
+        .arrow {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-container">
+        
+        <!-- ФОТО ПРОФИЛЯ -->
+        <div class="profile-pic-container">
+            <!-- Файл с фото должен называться model.jpg и лежать в одной папке с этим HTML файлом -->
+            <img src="model.jpg" alt="Caroline Morris">
+        </div>
+
+        <!-- БЛОК ИНФОРМАЦИИ -->
+        <div class="info-section">
+            <div class="name-row">
+                <div class="name-text">Caroline<br>Morris</div>
+                <div class="verified-badge">✓</div>
+            </div>
+            
+            <div class="tag">@carolinemorris</div>
+            <div class="greeting">Come say hi</div>
+            
+            <div class="status">
+                <div class="status-dot"></div>
+                ONLINE
+            </div>
+        </div>
+
+        <!-- КНОПКИ-ССЫЛКИ -->
+        <div class="buttons-container">
+            
+            <!-- КНОПКА FANVUE -->
+            <a href="https://www.fanvue.com/carolinemoris2005" target="_blank" class="btn">
+                <div class="icon-box fansly-bg">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 20C6 20 7.5 10 12 10C16.5 10 18 6 18 6" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 14H11" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="btn-text">+18 CHAT WITH ME</div>
+                <div class="arrow">→</div>
+            </a>
+
+            <!-- КНОПКА TELEGRAM -->
+            <a href="https://t.me/+d81DYmP_5ORjMTIy" target="_blank" class="btn">
+                <div class="icon-box telegram-bg">
+                    <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.5 4.5L2.5 12L8.5 14.5L11 21.5L15 16L21 19.5L21.5 4.5Z" fill="#fff"/>
+                        <path d="M8.5 14.5L21.5 4.5L11.5 15.5" stroke="#4f9cff" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <div class="btn-text">MY TELEGRAM<br>CHANEL</div>
+                <div class="arrow">→</div>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
